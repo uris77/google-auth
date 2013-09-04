@@ -61,7 +61,9 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.3.2"
 
         compile ':cache:1.0.1'
+
         compile ":rest-client-builder:1.0.2"
+        compile ":twitter-bootstrap:2.3.2"
         test(':spock:0.7') {
             excludes 'spock-grails-support', 'hibernate', 'grails-hibernate'
         }
