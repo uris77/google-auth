@@ -6,10 +6,10 @@ class HomeController {
     GrailsApplication grailsApplication
 
     def index() {
-        String googleApiUrl = grailsApplication.config.google.authUrl
+        String googleApiUrl = grailsApplication.config.google.authUrl.toString()
         String redirectUri = UriUtils.encodeHost(grailsApplication.config.google.redirectUri.toString(), "UTF8")
-        String encodedScope = UriUtils.encodeHost(grailsApplication.config.google.scope, "UTF8")
-        String clientId = grailsApplication.config.google.clientId
+        String encodedScope = UriUtils.encodeHost(grailsApplication.config.google.scope.toString(), "UTF8")
+        String clientId = grailsApplication.config.google.clientId.toString()
         String authUrl = "${googleApiUrl}scope=${encodedScope}&redirect_uri=${redirectUri}&client_id=${clientId}&response_type=code"
         [authUrl: authUrl]
     }
